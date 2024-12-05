@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Host Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Host Game</h1>
+<div class="input-container">
+  <label for="gameCode"></label><input type="text" id="gameCode" placeholder="Click 'Generate Code'" readonly>
+</div>
+<div class="button-container">
+<button onclick="generateGameCode()">Generate Code</button>
+<button onclick="hostGame()">Host Game</button>
+<button onclick="goBack()">Back</button>
+</div>
+<script>
+  function generateGameCode() {
+    let gameCode;
+    gameCode = 'GAME-' + Math.floor(1000 + Math.random() * 9000); // Generate random 4-digit code prefixed with 'GAME-'
+    document.getElementById('gameCode').value = gameCode;
+  }
+
+  function hostGame() {
+    const gameCode = document.getElementById('gameCode').value;
+    if (gameCode.trim() === '') {
+      alert('Please generate a game code before hosting.');
+    } else {
+      // Redirects to the loading page with the game code as a URL parameter
+      window.location.href = `loading_page.html?gameCode=${encodeURIComponent(gameCode)}`;
+    }
+  }
+  function goBack() {
+    window.location.href = 'game_page.html';
+  }
+</script>
+</body>
+</html>
+

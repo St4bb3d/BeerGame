@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Generate a random game code and redirect to the loading page
+    window.onload = function () {
+      const randomGameCode = 'GAME-' + Math.floor(1000 + Math.random() * 9000); // Generate a random code prefixed with 'RANDOM-'
+      window.location.href = `loading_page.html?gameCode=${encodeURIComponent(randomGameCode)}`;
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>
+

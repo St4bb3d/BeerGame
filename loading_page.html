@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Loading Game...</h1>
+<div class="loading-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<!--<script>-->
+<!--  // Redirect to game_in_progress.html after 3 seconds-->
+<!--  setTimeout(() => {-->
+<!--    window.location.href = 'game_in_progress.html';-->
+<!--  }, 6000);-->
+<!--</script>-->
+
+<script>
+  // Function to extract the game code from the URL
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  const gameCode = getQueryParam('gameCode');
+  console.log('Game Code:', gameCode); // Optional: Display the game code for debugging
+
+  // Redirect to the game page after 3 seconds with the game code
+  setTimeout(() => {
+    window.location.href = `game_in_progress.html?gameCode=${encodeURIComponent(gameCode)}`;
+  }, 3000);
+</script>
+</body>
+</html>

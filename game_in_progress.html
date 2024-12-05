@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game In Progress</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+<h1>Game In Progress</h1>
+<div class="game-placeholder">
+  <h2>Game Placeholder</h2>
+  <p>This area represents where the actual game will be displayed.</p>
+</div>
+<div class="button-container">
+<button onclick="goBack()">Back</button>
+</div>
+
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+
+
+<script>
+  function goBack() {
+    window.location.href = 'game_page.html';
+  }
+    // Function to extract the game code from the URL
+    function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+    // Get and display the game code
+    const gameCode = getQueryParam('gameCode');
+    if (gameCode) {
+    const gameCodeDisplay = document.createElement('p');
+    gameCodeDisplay.textContent = `Game Code: ${gameCode}`;
+    document.body.appendChild(gameCodeDisplay);
+  }
+</script>
+
+
+</body>
+</html>
+

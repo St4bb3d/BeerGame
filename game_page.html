@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Selection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<h1>The Beer Game</h1>
+<div class="button-container">
+  <button onclick="startRandomGame()">Random Game</button>
+  <button onclick="hostGame()">Host Game</button>
+  <button onclick="joinGame()">Join Game</button>
+  <button onclick="goBack()">Back</button>
+</div>
+
+<script>
+  function startRandomGame() {
+    window.location.href = 'random_game.html';
+  }
+
+  function hostGame() {
+    window.location.href = 'host_game.html';
+  }
+
+  function joinGame() {
+    window.location.href = 'join_game.html';
+  }
+  function goBack() {
+    window.location.href = 'start_page.html';
+  }
+</script>
+</body>
+</html>
+

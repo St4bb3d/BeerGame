@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>The Beer Game</h1>
+<div class="input-container">
+  <input type="text" id="gameCode" placeholder="Enter Game Code">
+</div>
+<div class="button-container">
+<button onclick="joinGame()">Join</button>
+<button onclick="goBack()">Back</button>
+</div>
+<script>
+  function joinGame() {
+    const gameCode = document.getElementById('gameCode').value;
+    if (gameCode.trim() === '') {
+      alert('Please enter a valid game code.');
+    } else {
+      // Redirects to the loading page with the game code as a URL parameter
+      window.location.href = `loading_page.html?gameCode=${encodeURIComponent(gameCode)}`;
+    }
+  }
+  function goBack() {
+    window.location.href = 'game_page.html';
+  }
+</script>
+
+</body>
+</html>
